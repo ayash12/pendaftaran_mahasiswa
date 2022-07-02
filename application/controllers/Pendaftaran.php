@@ -78,7 +78,8 @@ class Pendaftaran extends CI_Controller {
 
 	public function update_form($id){
 		$data = array(
-			'page' => 'update_form'
+			'page' => 'update_form',
+			'data' => $this->db->where('id', $id)->get('T_Pendaftaran')->row()
 		);
 			
 		$this->load->view('welcome_message', $data);
@@ -86,17 +87,17 @@ class Pendaftaran extends CI_Controller {
 	}
 
 
-	public function update($id){
+	public function update(){
+		$id = $_POST['id'];
 		$data = array(
 			'nama' => $_POST['nama'],
 			'asalsekolah' => $_POST['asalsekolah'],
 			'alamat' => $_POST['alamat'],
-			'noHp' => $_POST['noHp'],
-			'jurusanygdipilih' => $_POST['jurusanygdipilih'],
-			'username' => $_POST['username'],
-			'password' => MD5($_POST['password'])
+			'noHp' => $_POST['no_hp'],
+			'jurusanygdipilih' => $_POST['jurusan']
 		);
 		$this->db->set($data)->where('id',$id)->update('T_Pendaftaran');
+		redirect('pendaftar');
 	}
 
 	public function delete($id){

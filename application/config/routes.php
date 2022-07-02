@@ -33,6 +33,8 @@ $route['pendaftar/update/(:any)'] = 'pendaftaran/update_form/$1';
 $route['pendaftar/delete/(:any)'] = 'pendaftaran/delete/$1';
 
 $route['pendaftar/cek'] = 'login/pendaftar_cek';
+$route['pendaftar/update'] = 'pendaftaran/update';
+
 
 
 

@@ -1,34 +1,49 @@
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
 
-<h3>update</h3>
 
-<div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-  </form>
-</div>
-
-</body>
-</html>
+<div class="main-panel">
+			<div class="content">
+				<div class="page-inner">
+					<div class="page-header">
+						<h4 class="page-title">Pendaftar</h4>
+						<div class="btn-group btn-group-page-header ml-auto">
+							<button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-ellipsis-h"></i>
+							</button>
+							
+						</div>
+					</div>
+                    <form action="<?= base_url('pendaftar/update');?>" method="post">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                <label style="padding: 10px;" >Nama</label> 
+                                <input type="text" name="nama" class="form-control" value="<?= $data->nama?>">
+                                <input type="text" name="id" class="form-control" value="<?= $data->id?>" hidden>
+                                
+                                <label style="padding: 10px;">Asal Sekolah</label>
+                                <input type="text" name="asalsekolah" class="form-control" value="<?= $data->asalsekolah?>">
+                        
+                                <label style="padding: 10px;">Jurusan</label>
+                                <input type="text" name="jurusan" class="form-control" value="<?= $data->jurusanygdipilih?>">
+                            
+                                <label style="padding: 10px;">No Hp</label>
+                                <input type="text" name="no_hp" class="form-control" value="<?= $data->noHp?>">
+                                
+                                <label style="padding: 10px;">Alamat</label>
+                                <textarea  name="alamat" class="form-control"><?= $data->alamat?></textarea>
+                            
+                            
+                                </div>
+                                
+                                
+                            </div>
+                            <br><br>
+                            <button class="btn btn-info btn-border btn-round btn-sm mr-2">Save</button>
+                    </form>
+				
+				</div>
+			</div>
+			
+		</div>
